@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000000);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(255,255,255,0.2);
+animation:zoom 1s;
+max-width:320px;
+width:90%;
+}
+
+@keyframes zoom{
+from{transform:scale(0.5);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+h1{
+color:white;
+}
+
+input{
+padding:12px;
+width:90%;
+border:none;
+border-radius:10px;
+margin:10px 0;
+font-size:16px;
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:#00c6ff;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#result{
+color:white;
+font-size:20px;
+margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>✨ Welcome ✨</h1>
+
+<input type="text" id="name" placeholder="Enter Your Name">
+
+<button onclick="welcomeUser()">Enter</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+function welcomeUser(){
+let name=document.getElementById("name").value;
+
+document.getElementById("result").innerHTML=
+"🎉 Welcome, <b>"+name+"</b>!<br><br>🚀 Thanks for visiting this website.";
+}
+</script>
+
+</body>
+</html>
